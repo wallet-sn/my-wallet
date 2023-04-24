@@ -59,6 +59,7 @@ export default function SignInPage() {
         <input
           placeholder="Senha"
           type="password"
+          autoComplete="current-password"
           minLength={3}
           value={formData.password}
           onChange={(e) =>

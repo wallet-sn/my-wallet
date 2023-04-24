@@ -62,6 +62,7 @@ export default function SignupPage() {
         <input
           placeholder="Senha"
           type="password"
+          autoComplete="current-password"
           minLength={3}
           value={formData.password}
           disabled={formData.loading}
