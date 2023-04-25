@@ -2,25 +2,24 @@ import styled from "styled-components";
 import { BiExit } from "react-icons/bi";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import axios from "axios";
-import NewNameContext from "../context/NewNameContext";
+import UserContext from "../context/UserContext";
 import React, { useState, useEffect, useContext, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
   const navigate = useNavigate();
   const apiUrl = process.env.REACT_APP_API_URL;
-  const { currentUser, setCurrentUser } = useContext(NewNameContext);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
   const [transactions, setTransactions] = useState([]);
   const [amount, setAmount] = useState({ value: 0, order: "" });
   const [load, setLoad] = useState(false);
 
   const updateTransactions = useCallback(
     (token) => {
+      console.log(currentUser);
       const config = {
         headers: {
-          Authorization: `Bearer ${
-            currentUser.token ? currentUser.token : token.token
-          }`,
+          Authorization: `Bearer ${currentUser ? currentUser : token}`,
         },
       };
       setLoad(true);
@@ -55,6 +54,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const tokenFromStorage = localStorage.getItem("session");
+    console.log(tokenFromStorage);
     if (tokenFromStorage) {
       const token = JSON.parse(tokenFromStorage);
       setCurrentUser(token);
@@ -75,7 +75,7 @@ export default function HomePage() {
     if (window.confirm(confirmationMessage)) {
       const config = {
         headers: {
-          Authorization: `Bearer ${currentUser.token}`,
+          Authorization: `Bearer ${currentUser}`,
         },
       };
       setLoad(true);

@@ -5,13 +5,13 @@ import HomePage from "./pages/HomePage";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import TransactionsPage from "./pages/TransactionPage";
-import NewNameContext from "./context/NewNameContext";
+import UserContext from "./context/UserContext";
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState({ name: "", token: "" });
   return (
     <PagesContainer>
-      <NewNameContext.Provider value={{ currentUser, setCurrentUser }}>
+      <UserContext.Provider value={{ currentUser, setCurrentUser }}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<SignInPage />} />
@@ -20,7 +20,7 @@ export default function App() {
             <Route path="/nova-transacao/:tipo" element={<TransactionsPage />} />
           </Routes>
         </BrowserRouter>
-      </NewNameContext.Provider>
+      </UserContext.Provider>
     </PagesContainer>
   );
 }

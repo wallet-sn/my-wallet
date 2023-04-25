@@ -2,14 +2,14 @@ import axios from "axios";
 import styled from "styled-components";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import NewNameContext from "../context/NewNameContext";
+import UserContext from "../context/UserContext";
 import dayjs from "dayjs";
 
 export default function TransactionsPage() {
   const params = useParams();
   const navigate = useNavigate();
   const apiUrl = process.env.REACT_APP_API_URL;
-  const { currentUser, setcurrentUser } = useContext(NewNameContext);
+  const { currentUser, setcurrentUser } = useContext(UserContext);
   const [formData, setformData] = useState({
     description: "",
     value: "",

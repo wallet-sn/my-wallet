@@ -19,11 +19,17 @@ export default function SignupPage() {
   function handleSubmit(e) {
     e.preventDefault();
     if (formData.password !== formData.repeatPassword) {
+      console.log("aquiiii");
       return alert("As senhas inseridas não são iguais!");
     }
+    const createUser = {
+      name: formData.name,
+      email: formData.email,
+      password: formData.password,
+    };
     setFormData({ ...formData, loading: true });
     axios
-      .post(`${apiUrl}/cadastro`, formData)
+      .post(`${apiUrl}/cadastro`, createUser)
       .then(() => {
         navigate("/");
       })

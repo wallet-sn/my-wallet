@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import MyWalletLogo from "../components/MyWalletLogo";
-import NewNameContext from "../context/NewNameContext";
+import UserContext from "../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 export default function SignInPage() {
-  const { setCurrentUser } = useContext(NewNameContext);
+  const { setCurrentUser } = useContext(UserContext);
   const [load, setload] = useState(false);
   const navigate = useNavigate();
   const apiUrl = process.env.REACT_APP_API_URL;
