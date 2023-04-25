@@ -54,6 +54,7 @@ export default function SignupPage() {
         <input
           placeholder="E-mail"
           type="email"
+          autoComplete="email"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           disabled={formData.loading}

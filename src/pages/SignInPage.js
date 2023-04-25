@@ -29,7 +29,7 @@ export default function SignInPage() {
     e.preventDefault();
     setload(true);
     axios
-      .post(`${apiUrl}/login`, formData)
+      .post(`${apiUrl}/`, formData)
       .then((res) => {
         const user = res.data;
         setCurrentUser(user);
