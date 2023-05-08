@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { mainColorButton, mainContrastColor } from "../constants/colors";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -10,10 +11,10 @@ const GlobalStyle = createGlobalStyle`
         outline: none;
         border: none;
         border-radius: 5px;
-        background-color: #a328d6;
+        background-color: ${mainColorButton};
         font-size: 20px;
         font-weight: 600;
-        color: #fff;
+        color: ${mainContrastColor};
         cursor: pointer;
         width: 100%;
         padding: 12px;
@@ -21,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     h1 {
         font-weight: 700;
         font-size: 26px;
-        color: white;
+        color: ${mainContrastColor};
     }
     input {
         font-size: 20px;
@@ -49,10 +50,10 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 700;
         font-size: 15px;
         line-height: 18px;
-        color: white;
+        color: ${mainContrastColor};
         text-decoration: none;
         padding-top: 30px;
     }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;
