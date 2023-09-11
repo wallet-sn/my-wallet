@@ -14,7 +14,7 @@ My Wallet Project is a web application that enables users to control their perso
 
 🔸 Backend Repository: https://github.com/natividadesusana/my-wallet-API
 
-🔸 Organization My Wallet: https://github.com/mywallet
+🔸 Organization My Wallet: https://github.com/wallet-sn
 
 <hr/>
 
